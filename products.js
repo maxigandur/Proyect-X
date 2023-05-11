@@ -48,3 +48,5 @@ for (const product of products) {
     `
     divSlider.append(newDiv);
 } 
+
+

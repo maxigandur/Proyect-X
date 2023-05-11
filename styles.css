@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+   /*  box-sizing: border-box; */
     padding: 0;
     margin: 0;
 }
@@ -20,6 +20,12 @@
     font-size: 20px;
     transition: transform .9s;
 }
+
+li{
+    text-decoration: none;
+    list-style: none;
+}
+
 
 li a{
     text-decoration: none;
@@ -54,12 +60,12 @@ li a:hover{
     width: 200px;
     height: 40px;
     margin-top: 10px;
+    margin-left: 20px;
     transition: .9s;
 }
 
 .logo:hover{
-    width: 250px;
-    height: 50px;
+    scale: 1.2;
 }
 
 .searcher{
@@ -73,7 +79,7 @@ li a:hover{
     border-top-left-radius: 10px;
     outline: none;
     width: 600px;
-    height: 35px;
+    height: 33px;
     font-size: 20px;
     color: gray;
     border: 3px solid rgb(255, 98, 0);
@@ -86,7 +92,7 @@ li a:hover{
     border: 3px solid rgb(255, 98, 0);
     background-color: rgb(255, 98, 0);
     width: 150px;
-    height: 35px;
+    height: 38px;
 }
 
 .cart{
@@ -140,7 +146,7 @@ li a:hover{
     width: 250px;
     font-size: 20px;
     height: 50px;
-    background-color: rgb(43, 43, 43);
+    background-color: #2b2b2b;
     color: white;
     border-top-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -150,7 +156,7 @@ li a:hover{
 }
 
 .btnProduct:hover{
-    background-color: rgb(255, 98, 0);
+    background-color: #ff6200;
 }
 
 .imgContainer{
@@ -160,7 +166,9 @@ li a:hover{
 .imgProduct{
     margin-top: 20px;
     margin-left: 15px;
+    transition: .4s;
 }
+
 
 .titleProduct{
     font-size: 25px;
@@ -190,6 +198,15 @@ li a:hover{
     width: 30%;
     text-align: center;
     border: 3px solid red;
+
+}
+
+.categoriesContent h2{
+    cursor: pointer;
+    font-size: 20px;
+    text-decoration: underline;
+    color: rgb(255, 98, 0);
+    margin-bottom: 15px;
 }
 
 .contentProduct{
@@ -198,7 +215,251 @@ li a:hover{
     flex-direction: column;
 }
 
-.categoriesItem{
+.categories-Item{
+    margin-bottom: 15px;
+    cursor: pointer;
+    color:rgb(43, 43, 43) ;
+    transition: .4s;
+}
+
+.categories-Item:hover
+{
+    text-decoration: underline #fb6304;
+    scale: 1.4;
+}
+.imgProduct:hover{
+    scale: 1.1;
+}
+
+
+
+/* LOGIN */
+
+.loginBox{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: rgb(43,43,43);
+    background: linear-gradient(117deg, rgba(43,43,43,1) 8%, rgba(255,98,0,0.6028985507246376) 91%);
+    justify-content: center;
+     border:2px solid rgba(255, 255, 255, .5); 
+    border-radius: 20px;
+    box-shadow: 10px 0 90px rgba(0, 0, 0, .5);
+    height: 450px;
+    width: 350px;
+    transition: .5s;
+    top: 30%; 
+    left: 44%;
+}
+
+/* BLUR DE BODY COMLPETO */
+
+.show{
+    filter: blur(5px);   
+   
+}
+
+.registerBox{
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background: rgb(43,43,43);
+    background: linear-gradient(117deg, rgba(43,43,43,1) 8%, rgba(255,98,0,0.6028985507246376) 91%);
+    justify-content: center;
+     border:2px solid rgba(255, 255, 255, .5); 
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    height: 610px;
+    width: 350px;
+    top: 23%; 
+    left: 44%;
+    transition: .5s;
+}
+
+.loginTitle h2{
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+    
+}
+.registerTitle h2{
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    color: white;
+}
+
+.inputboxLogin{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid rgb(255, 98, 0);
+    margin: 30px 0 ;
+}
+
+ .inputboxLogin label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform:translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputboxLogin input:focus~label,
+.inputboxLogin input:valid~label{
+    top: -5px;
+}
+
+.inputboxLogin input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: rgb(255, 98, 0);
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+
+.inputboxLogin .iconLogin
+{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: rgb(0, 0, 0);
+
+}
+
+.rememberMe{
+    font-size: .9em;
+    color: white;
+    font-weight: 350;   
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.rememberMe a{
+    color: rgb(43, 43, 43);
     text-decoration: none;
-    list-style: none;
+    font-weight: 600;
+}
+.rememberMe a:hover{
+    text-decoration: underline;
+}
+
+.btnLogin{
+    width: 100%;
+    height: 45px;
+    background: rgb(255, 98, 0);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.btnRegister{
+    width: 100%;
+    height: 45px;
+    background: rgb(255, 98, 0);
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.login-register{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+
+.login-register p a {
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-register p a:hover{
+    text-decoration: underline;
+}
+
+.login-rg{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-rg p a{
+    color: rgb(43, 43, 43);
+    text-decoration: none;
+    font-weight: 600;
+}
+.login-rg p a:hover{
+    text-decoration: underline;
+}
+
+
+.acceptTerms{
+   
+    color: white;
+   
+}
+
+
+
+.iconP{
+    font-size: 30px;
+    color: rgb(255, 98, 0);
+    position: absolute;
+    display: flex;
+    top :15px;
+    right: 160px;
+
+}
+
+.exit{
+    position: absolute;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: -1px;
+    color: rgb(255, 98, 0);
+    background-color:white;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;   
+    cursor: pointer;
+}
+.exitRegister{
+    position: absolute;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    right: -1px;
+    color: rgb(255, 98, 0);
+    background-color:white;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;   
+    cursor: pointer;
+}
+.hide{
+    display: none;
 }
