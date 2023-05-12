@@ -12,7 +12,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Project X - Tienda de Hardware</title>
 </head>
 <body >
@@ -75,12 +75,12 @@
         <form action="#">
             <div class="inputboxLogin">
                 <span class="iconLogin"><ion-icon name="mail"></ion-icon></span>
-                <input type="email" required>
+                <input type="email" required class="inputemailLogin">
                 <label for="">Email</label>
             </div>
             <div class="inputboxLogin">
                 <span class="iconLogin"><ion-icon name="lock-closed"></ion-icon></span>
-                <input type="password" required>
+                <input type="password" required class="inputpwLogin">
                 <label>Password</label>
             </div>
             <div class="rememberMe">
@@ -142,9 +142,10 @@
         </form>
     </div>
     
-    
 </div> 
 
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

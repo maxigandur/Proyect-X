@@ -38,7 +38,7 @@ btnregistertoLogin.addEventListener("click", ()=>{
 }) 
 
 
-/* LOGIN AND REGISTER LOGICS */
+/* REGISTER LOGICS */
 let registerName = document.querySelector(".inputRegisterName")
 let registerMail = document.querySelector(".inputRegisterMail")
 let registerPassword = document.querySelector(".inputRegisterPassword")
@@ -55,7 +55,6 @@ class user{
     }
 }
 
-
 function getInfo(e){
     e.preventDefault()
     let newUser = new user
@@ -65,32 +64,135 @@ function getInfo(e){
     newUser.rpass = registerRepeatpw.value
 
     users.push(newUser)
-    
-    
+     
     let users_json = JSON.stringify(users)
     localStorage.setItem("UsersID", users_json)
 
-
+    
 }
 
 
+function recoverInfo(){
 
-window.onload = userinfo
+    if (localStorage.getItem("UsersID")) {
+        let getUsers = localStorage.getItem("UsersID")
+        let usersParsed = JSON.parse(getUsers)
 
-function userinfo(){
-    let getUsers = localStorage.getItem("UsersID")
-    let usersParsed = JSON.parse(getUsers)
+        users = usersParsed 
+        console.log(users)
+
+    }   else{
+        console.log("no Se encontraron datos")
+    }
+
+}
     
 
-    for (let i = 0; i < usersParsed.length; i++) {
-        console.log(usersParsed[i])
+recoverInfo()
+
+/* LOGIN LOGICS */
+
+let loginEmail = document.querySelector(".inputemailLogin")
+let loginPw = document.querySelector(".inputpwLogin")
+let btnLogin = document.querySelector(".btnLogin").addEventListener("click", consultarDatos)
+
+function consultarDatos (e){
+
+    e.preventDefault()
+
+  /*   for (const user of users) {
+       
+        if (loginEmail.value === user.mail && loginPw.value === user.pass) {
+            console.log("Te Logeaste Exitosamente")
+            console.log(user.mail, user.pass)
+            Toastify({
+
+                text: "Te Logueaste Exitosamente",
+                position: "left",
+                style: {
+                  background: "green",
+                  fontSize: "15px",
+                },
+                duration: 3000
+      
+                }).showToast();
+            return
+        }   
         
+    } 
+ */
+
+    let contador = 0
+
+for (const user of users) {
+      
+    contador++ 
+    if(user.mail == loginEmail.value && user.pass == loginPw.value){
+        Toastify({
+
+            text: "Te Logueaste Exitosamente",
+            position: "left",
+            style: {
+              background: "green",
+              fontSize: "15px",
+            },
+            duration: 3000
+  
+            }).showToast();
+        return
+    } 
+    
+    
+    if (contador >= users.length){
+        /* window.location.reload() */
+
+        Toastify({
+
+            text: "Error Datos Incorrectos",
+            position: "left",
+            style: {
+              background: "Red",
+              fontSize: "15px",
+            },
+            duration: 3000
+  
+            }).showToast();
+
+            loginEmail.value = ""
+            loginPw.value = ""
+        return
     }
 
 
 
-   
-    
-}
-    
 
+
+   /*  else if (user.mail != loginEmail.value && user.pass != loginPw.value && contador == 0 || user.mail == loginEmail.value && user.pass != loginPw.value && contador == 0 || user.pass == loginPw.value && user.mail != loginEmail.value && contador == 0) {
+        console.log("Sus Credenciales Son Invalidas")     
+        
+    }
+
+    console.log(contador)
+ */
+
+   /*  if (user.mail == loginEmail.value && user.pass == loginPw.value) {
+        console.log("Se Logeo Correctamente")
+        return
+    }else{
+
+    } */
+
+ /*    else if(user.mail == loginEmail.value && user.pass != loginPw.value){
+        console.log("Su Contraseña Es Incorrecta")
+        return
+    }else if(user.mail != loginEmail.value && user.pass == loginPw.value){
+        console.log("Su Mail Es Incorrecto")
+        return
+    } */
+
+}
+   
+
+    
+  
+}
