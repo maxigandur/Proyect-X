@@ -255,8 +255,8 @@ li a:hover{
 /* BLUR DE BODY COMLPETO */
 
 .show{
-    filter: blur(5px);   
-   
+    filter: blur(8px);   
+   transition: .9s;
 }
 
 .registerBox{
@@ -462,4 +462,27 @@ li a:hover{
 }
 .hide{
     display: none;
+}
+
+.cartContainer{
+    position: fixed; 
+    display: flex;
+    justify-content: center;  
+    background: white;
+    border:3px solid black; 
+    border-radius: 20px; 
+    height: 50%;  
+    width: 80%;
+    transition: .5s;
+    top: 10%; 
+    left: 10%;
+    padding-top: 10px;
+}
+
+.cartContainer td{
+    text-align: center;
+    align-items: center;    
+    width: 180px;
+    border: 2px black solid;
+   
 }
