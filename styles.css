@@ -464,9 +464,10 @@ li a:hover{
     display: none;
 }
 
-.cartContainer{
-    position: fixed; 
-    display: flex;
+.cartContainer {
+    
+    /* position: fixed;  */
+    display: none;
     justify-content: center;  
     background: white;
     border:3px solid black; 
